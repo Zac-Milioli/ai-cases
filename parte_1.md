@@ -24,6 +24,12 @@ Usos:
 R:
 
 NER pode ser utilizado para adicionar mais contexto à dados categorizando-os e normalizando-os no pré-processamento, permitindo que o modelo que efetuará a análise siga um fluxo mais direto para a resposta adequada. 
-
 Com um NER satisfatório, pode ser eliminada muita ambiguidade dos dados, o que permite com que a IA tenha uma menor tendência a compreender informações da maneira incorreta. Além disso, a classificação
 dos dados via NER junto de um bom tratamento e limpeza antes da análise de IA pode aumentar exponencialmente sua eficiência de processamento economizando em ciclos de CPU.
+
+Se eu fosse implementar NER em um sistema com algum modelo de assitente virtual, eu iria seguir as seguintes etapas:
+- Captar a resposta do usuário;
+- Através de um modelo de classificação pré-treinado (seja um simple model ou algo com BERT), eu enviaria o texto limpo (limetizado, sem stopwords, normalizado e tokenizado) para análise;
+- Após a análise, eu poderia envolver as classificações das palavras de maior interesse (descobertas por meio de TF-IDF) em tags XML indicando o que são ou determinando que são pontos de atenção;
+- Enviaria a mensagem no novo formato para o processamento do modelo do assistente virtual.
+- Retornaria sua resposta ao usuário.
