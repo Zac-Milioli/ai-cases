@@ -33,3 +33,6 @@ Se eu fosse implementar NER em um sistema com algum modelo de assitente virtual,
 - Após a análise, eu poderia envolver as classificações das palavras de maior interesse (descobertas por meio de TF-IDF) em tags XML indicando o que são ou determinando que são pontos de atenção;
 - Enviaria a mensagem no novo formato para o processamento do modelo do assistente virtual.
 - Retornaria sua resposta ao usuário.
+
+Para o usuário, tudo funcionaria como um chat normal.
+É interessante inserir uma barra de carregamento ou um spinner para indicar que o processamento está acontecendo, mas também efetuar o streaming do texto de resposta conforme ele for gerado na penúltima etapa de implementação descrita acima.
